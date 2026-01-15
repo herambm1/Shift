@@ -1,0 +1,343 @@
+/* Comparison Page Layout */
+.comparison-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    min-height: calc(100vh - 120px);
+    gap: 0;
+    padding-top: 0.5rem;
+}
+
+/* Sidebar */
+.progress-sidebar {
+    background: linear-gradient(180deg, #0a1929 0%, #1e3a5f 100%);
+    border-right: 2px solid rgba(0, 217, 255, 0.3);
+    padding: 2rem 1.5rem;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
+/* Current Mode */
+.current-mode {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    padding: 1rem;
+    background: rgba(0, 217, 255, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 217, 255, 0.2);
+}
+
+.current-mode h2 {
+    color: #00d9ff;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* Learning Path Sections */
+.path-section {
+    margin-bottom: 2rem;
+    display: none;
+}
+
+.path-section.active {
+    display: block;
+}
+
+.path-section h3 {
+    color: #00d9ff;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+/* Progress List */
+.progress-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.progress-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #ffffff;
+}
+
+.progress-item:hover {
+    background: rgba(0, 217, 255, 0.1);
+}
+
+.progress-item.active {
+    background: rgba(0, 217, 255, 0.2);
+    border-left: 3px solid #00d9ff;
+}
+
+.progress-icon {
+    font-size: 1.2rem;
+    width: 20px;
+}
+
+.progress-title {
+    font-size: 1rem;
+}
+
+/* Inbuilt Functions Dropdown */
+.function-dropdown {
+    position: relative;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    overflow: hidden;
+}
+
+.dropdown-trigger {
+    padding: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    transition: all 0.3s;
+}
+
+.dropdown-trigger:hover {
+    background: rgba(0, 217, 255, 0.1);
+}
+
+.dropdown-category {
+    font-weight: 600;
+    color: #00d9ff;
+}
+
+.dropdown-arrow {
+    transition: transform 0.3s;
+}
+
+.dropdown-menu {
+    max-height: 0;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.6);
+    transition: max-height 0.3s ease-out;
+}
+
+.function-dropdown.open .dropdown-menu {
+    max-height: 400px;
+}
+
+.function-dropdown.open .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.menu-group {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(0, 217, 255, 0.1);
+}
+
+.menu-group:last-child {
+    border-bottom: none;
+}
+
+.group-title {
+    padding: 0.5rem 1rem;
+    color: #00d9ff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.menu-item {
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    color: #ffffff;
+    transition: all 0.2s;
+    font-size: 0.95rem;
+}
+
+.menu-item:hover {
+    background: rgba(0, 217, 255, 0.2);
+    padding-left: 2rem;
+}
+
+.menu-item.active {
+    background: rgba(0, 217, 255, 0.3);
+    color: #00d9ff;
+    font-weight: 600;
+}
+
+/* Intro programs icon color */
+#programsList .progress-icon {
+    color: #ffd700;
+}
+
+/* Next button */
+.next-topic-btn {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #00d9ff;
+    border: none;
+    border-radius: 8px;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.next-topic-btn:hover {
+    background: #00b8d4;
+    transform: translateY(-2px);
+}
+
+/* Main comparison area */
+.comparison-main {
+    padding: 2rem 3rem;
+}
+
+.language-headers {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.language-header {
+    text-align: center;
+}
+
+.language-header h3 {
+    font-size: 1.8rem;
+    color: #00d9ff;
+    margin-bottom: 0.5rem;
+}
+
+.lang-label {
+    color: #888888;
+    font-size: 0.9rem;
+}
+
+.comparison-divider {
+    width: 2px;
+    height: 60px;
+    background: linear-gradient(180deg, transparent, #00d9ff, transparent);
+}
+
+.concept-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.concept-title h1 {
+    font-size: 2.8rem;
+    color: #ffffff;
+    font-weight: 300;
+}
+
+/* Split content panels */
+.split-content {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+}
+
+.center-divider {
+    width: 2px;
+    background: linear-gradient(180deg, transparent, #00d9ff, transparent);
+    align-self: stretch;
+}
+
+.content-panel {
+    background: rgba(10, 25, 41, 0.6);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 217, 255, 0.2);
+}
+
+/* Sections inside panels */
+.syntax-section,
+.code-section,
+.explanation-section {
+    margin-bottom: 2rem;
+}
+
+.syntax-section h4,
+.code-section h4,
+.explanation-section h4 {
+    color: #00d9ff;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.syntax-section code {
+    display: block;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1rem;
+    border-radius: 8px;
+    color: #00d9ff;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    border-left: 4px solid #00d9ff;
+}
+
+.code-section pre {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 1.5rem;
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: 'Courier New', monospace;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    overflow-x: auto;
+    border-left: 4px solid #00b8d4;
+}
+
+.explanation-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.explanation-section li {
+    padding: 0.7rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #ffffff;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.explanation-section li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #00d9ff;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .comparison-container {
+        grid-template-columns: 1fr;
+    }
+
+    .progress-sidebar {
+        position: static;
+        top: 0;
+    }
+
+    .split-content {
+        grid-template-columns: 1fr;
+    }
+
+    .center-divider {
+        display: none;
+    }
+}

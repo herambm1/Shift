@@ -1,0 +1,82 @@
+{
+  "language": "python",
+  "concept": "loops",
+  "title": "Loops in Python",
+  "difficulty": 2,
+  "category": "control_flow",
+  "estimated_time": "20 minutes",
+  
+  "syntax": {
+    "pattern": "for item in iterable:\n    # code\n\nwhile condition:\n    # code",
+    "examples": [
+      "for i in range(5):\n    print(i)",
+      "for item in:\n    print(item)",
+      "while count < 10:\n    count += 1"
+    ]
+  },
+  
+  "explanation": {
+    "short": "Python has for loops (iterate over sequences) and while loops (repeat while condition is true).",
+    "detailed": "Python's for loop iterates over any iterable (lists, strings, ranges). The while loop repeats as long as a condition is true. Both support break (exit loop) and continue (skip to next iteration). Python also has list comprehensions for concise loops."
+  },
+  
+  "key_points": [
+    "for loops iterate over iterables",
+    "while loops repeat while condition is true",
+    "Use 'break' to exit loop early",
+    "Use 'continue' to skip to next iteration",
+    "No traditional C-style for(i=0; i<10; i++)",
+    "else clause can follow loops"
+  ],
+  
+  "code_example": "# For loop with range\nfor i in range(5):\n    print(i)  # 0, 1, 2, 3, 4\n\n# For loop with list\nfruits = ['apple', 'banana', 'cherry']\nfor fruit in fruits:\n    print(fruit)\n\n# While loop\ncount = 0\nwhile count < 5:\n    print(count)\n    count += 1\n\n# Loop with break\nfor i in range(10):\n    if i == 5:\n        break\n    print(i)  # Stops at 4\n\n# Loop with continue\nfor i in range(5):\n    if i == 2:\n        continue\n    print(i)  # Skips 2\n\n# Loop with else (runs if no break)\nfor i in range(5):\n    print(i)\nelse:\n    print('Loop completed')\n\n# List comprehension (concise loop)\nsquares = [x**2 for x in range(5)]\nprint(squares)  # ",
+  
+  "loop_types": [
+    {
+      "type": "For loop",
+      "syntax": "for item in iterable:",
+      "use_case": "Iterate over sequences (lists, strings, ranges)"
+    },
+    {
+      "type": "While loop",
+      "syntax": "while condition:",
+      "use_case": "Repeat while condition is true"
+    },
+    {
+      "type": "Nested loops",
+      "syntax": "for i in range(3):\n    for j in range(3):",
+      "use_case": "Multi-dimensional iteration"
+    },
+    {
+      "type": "List comprehension",
+      "syntax": "[expression for item in iterable]",
+      "use_case": "Create lists from loops concisely"
+    }
+  ],
+  
+  "best_practices": [
+    "Use for loops for known iterations",
+    "Use while loops for unknown iterations",
+    "Avoid modifying list while iterating over it",
+    "Use enumerate() to get index: for i, item in enumerate(list)",
+    "Use zip() to iterate multiple lists: for a, b in zip(list1, list2)",
+    "Prefer list comprehensions for simple transformations"
+  ],
+  
+  "common_mistakes": [
+    {
+      "mistake": "Infinite while loop",
+      "wrong": "while True:\n    print('Forever!')",
+      "right": "count = 0\nwhile count < 10:\n    print(count)\n    count += 1",
+      "explanation": "Always ensure while loop condition eventually becomes false"
+    },
+    {
+      "mistake": "Modifying list during iteration",
+      "wrong": "items = \nfor item in items:\n    items.remove(item)",
+      "right": "items = \nitems = [item for item in items if item != 2]",
+      "explanation": "Modifying a list while iterating can skip elements or cause errors"
+    }
+  ]
+}
+
+

@@ -1,0 +1,81 @@
+{
+  "language": "java",
+  "concept": "functions",
+  "title": "Methods in Java",
+  "difficulty": 2,
+  "category": "basics",
+  "estimated_time": "25 minutes",
+  "syntax": {
+    "pattern": "accessModifier returnType methodName(parameters) {\n    // method body\n    return value;\n}",
+    "examples": [
+      "public void greet() {\n    System.out.println(\"Hello\");\n}",
+      "public int add(int a, int b) {\n    return a + b;\n}",
+      "private String getName() {\n    return \"Alice\";\n}"
+    ]
+  },
+  "explanation": {
+    "short": "Methods in Java must declare return type and access modifier. They must be inside a class.",
+    "detailed": "Java methods (functions) must specify return type, access modifier, and parameter types. Methods must be defined inside classes. Use 'void' for methods that don't return a value. Methods can be overloaded (same name, different parameters). Static methods belong to the class, not instances."
+  },
+  "key_points": [
+    "Must declare return type (or void)",
+    "Must declare parameter types",
+    "Must specify access modifier (public, private, protected)",
+    "Methods belong to classes",
+    "Can be static or instance methods",
+    "Supports method overloading",
+    "Must use 'return' for non-void methods"
+  ],
+  "code_example": "public class Calculator {\n    \n    // Instance method\n    public int add(int a, int b) {\n        return a + b;\n    }\n    \n    // Method with no return value\n    public void printResult(int result) {\n        System.out.println(\"Result: \" + result);\n    }\n    \n    // Static method\n    public static double multiply(double a, double b) {\n        return a * b;\n    }\n    \n    // Method overloading (same name, different parameters)\n    public int add(int a, int b, int c) {\n        return a + b + c;\n    }\n    \n    // Method with default behavior\n    public String greet(String name) {\n        if (name == null) {\n            name = \"Guest\";\n        }\n        return \"Hello, \" + name + \"!\";\n    }\n}\n\n// Usage\nCalculator calc = new Calculator();\nint sum = calc.add(5, 3);\nSystem.out.println(sum);  // 8\n\n// Static method call\ndouble product = Calculator.multiply(4.5, 2.0);\nSystem.out.println(product);  // 9.0",
+  "method_types": [
+    {
+      "type": "Instance method",
+      "syntax": "public int getValue() { return value; }",
+      "usage": "Requires object instance to call"
+    },
+    {
+      "type": "Static method",
+      "syntax": "public static int add(int a, int b) { return a + b; }",
+      "usage": "Called on class: ClassName.methodName()"
+    },
+    {
+      "type": "Void method",
+      "syntax": "public void print() { System.out.println(); }",
+      "usage": "Returns nothing"
+    },
+    {
+      "type": "Constructor",
+      "syntax": "public ClassName(parameters) { }",
+      "usage": "Special method to initialize objects"
+    }
+  ],
+  "best_practices": [
+    "Use verb names: calculateTotal not total",
+    "Keep methods focused on single task",
+    "Use camelCase: getUserName not get_user_name",
+    "Document with Javadoc comments",
+    "Use descriptive parameter names",
+    "Return early to avoid deep nesting",
+    "Make methods as private as possible"
+  ],
+  "common_mistakes": [
+    {
+      "mistake": "Not specifying return type",
+      "wrong": "public add(int a, int b) { return a + b; }",
+      "right": "public int add(int a, int b) { return a + b; }",
+      "explanation": "Return type is mandatory in Java"
+    },
+    {
+      "mistake": "Missing return statement",
+      "wrong": "public int getValue() {\n    int x = 10;\n}",
+      "right": "public int getValue() {\n    int x = 10;\n    return x;\n}",
+      "explanation": "Non-void methods must return a value"
+    },
+    {
+      "mistake": "Not declaring parameter types",
+      "wrong": "public int add(a, b) { return a + b; }",
+      "right": "public int add(int a, int b) { return a + b; }",
+      "explanation": "Parameter types must be declared"
+    }
+  ]
+}

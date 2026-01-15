@@ -1,0 +1,79 @@
+{
+  "language": "javascript",
+  "concept": "variables",
+  "title": "Variables in JavaScript",
+  "difficulty": 1,
+  "category": "basics",
+  "estimated_time": "15 minutes",
+  "syntax": {
+    "pattern": "let variableName = value;\nconst CONSTANT_NAME = value;\nvar oldStyle = value;",
+    "examples": [
+      "let age = 25;",
+      "const NAME = 'Alice';",
+      "var isStudent = true;"
+    ]
+  },
+  "explanation": {
+    "short": "JavaScript has three main ways to declare variables: var, let, and const.",
+    "detailed": "Modern JavaScript uses let and const for most variables. let is used for values that can change, const for values that should not be reassigned. var is the older keyword and has function scope and hoisting behavior that often leads to bugs, so it is generally avoided in modern code."
+  },
+  "key_points": [
+    {
+      "type": "string",
+      "example": "let name = 'Alice';",
+      "description": "Textual data."
+    },
+    {
+      "type": "number",
+      "example": "let age = 25;",
+      "description": "Numeric values."
+    },
+    {
+      "type": "boolean",
+      "example": "let isStudent = true;",
+      "description": "Boolean true/false values."
+    },
+    {
+      "type": "array",
+      "example": "let items = [1, 2, 3];",
+      "description": "Ordered lists of values."
+    },
+    {
+      "type": "null",
+      "example": "let data = null;",
+      "description": "Intentional empty value."
+    },
+    {
+      "type": "undefined",
+      "example": "let x; // undefined",
+      "description": "Declared but not assigned a value."
+    }
+  ],
+  "best_practices": [
+    "Prefer const by default and use let only when reassignment is needed.",
+    "Avoid var to prevent scoping and hoisting issues.",
+    "Use descriptive variable names instead of single letters.",
+    "Keep variables scoped as narrowly as possible.",
+    "Initialize variables when declaring them when practical."
+  ],
+  "common_mistakes": [
+    {
+      "mistake": "Expecting block scope with var",
+      "wrong": "if (true) { var x = 10; } console.log(x); // 10",
+      "right": "if (true) { let x = 10; } console.log(x); // ReferenceError",
+      "explanation": "var is function-scoped, not block-scoped. Use let or const for block scope."
+    },
+    {
+      "mistake": "Reassigning const",
+      "wrong": "const name = 'Alice'; name = 'Bob';",
+      "right": "let name = 'Alice'; name = 'Bob';",
+      "explanation": "Variables declared with const cannot be reassigned."
+    },
+    {
+      "mistake": "Using uninitialized variables",
+      "wrong": "let total; console.log(total + 5);",
+      "right": "let total = 0; console.log(total + 5);",
+      "explanation": "Uninitialized variables are undefined and can cause unintended results."
+    }
+  ]
+}

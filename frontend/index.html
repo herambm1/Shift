@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shift - Learn Programming Languages</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <img src="assets/logo.png" alt="Shift Logo" class="logo-img">
+            </div>
+            <div class="nav-links">
+                <a href="#" class="nav-link">Help</a>
+                <button class="icon-btn" id="languageBtn">🌐</button>
+                <button class="icon-btn" id="favoritesBtn">❤️</button>
+                <button class="login-btn" id="loginBtn">
+                    <span class="user-icon">👤</span> Log in
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Tab Navigation - Removed Transition button -->
+        <div class="tabs">
+            <button class="tab-btn active" id="askAiTab">
+                💬 Ask AI
+            </button>
+            <button class="tab-btn" id="standaloneTab">
+                📖 Study Stand-alone
+            </button>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="hero-title">Master any programming language. One simple transition.</h1>
+        </section>
+
+        <!-- Search Form -->
+        <div class="search-container">
+            <form class="search-form" id="searchForm">
+                <!-- Language Selection -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fromLang">From</label>
+                        <div class="select-wrapper">
+                            <select id="fromLang" class="language-select" required>
+                                <option value="">Select language (L1)</option>
+                                <option value="java">Java</option>
+                                <option value="python">Python</option>
+                                <option value="javascript">JavaScript</option>
+                                <option value="cpp">C++</option>
+                                <option value="c">C</option>
+                                <option value="csharp">C#</option>
+                                <option value="ruby">Ruby</option>
+                                <option value="go">Go</option>
+                                <option value="rust">Rust</option>
+                                <option value="php">PHP</option>
+                                <option value="swift">Swift</option>
+                                <option value="kotlin">Kotlin</option>
+                                <option value="typescript">TypeScript</option>
+                                <option value="r">R</option>
+                                <option value="matlab">MATLAB</option>
+                            </select>
+                            <span class="select-arrow">▼</span>
+                        </div>
+                    </div>
+
+                    <button type="button" class="swap-btn" id="swapBtn">⇄</button>
+
+                    <div class="form-group">
+                        <label for="toLang">To</label>
+                        <div class="select-wrapper">
+                            <select id="toLang" class="language-select" required>
+                                <option value="">Select language (L2)</option>
+                                <option value="java">Java</option>
+                                <option value="python">Python</option>
+                                <option value="javascript">JavaScript</option>
+                                <option value="cpp">C++</option>
+                                <option value="c">C</option>
+                                <option value="csharp">C#</option>
+                                <option value="ruby">Ruby</option>
+                                <option value="go">Go</option>
+                                <option value="rust">Rust</option>
+                                <option value="php">PHP</option>
+                                <option value="swift">Swift</option>
+                                <option value="kotlin">Kotlin</option>
+                                <option value="typescript">TypeScript</option>
+                                <option value="r">R</option>
+                                <option value="matlab">MATLAB</option>
+                            </select>
+                            <span class="select-arrow">▼</span>
+                        </div>
+                    </div>
+
+                    <!-- User Profile Selection -->
+                    <div class="form-group">
+                        <label for="userProfile">User Profile</label>
+                        <div class="select-wrapper">
+                            <select id="userProfile" class="language-select" required>
+                                <option value="">Select profile</option>
+                                <option value="student">Student</option>
+                                <option value="employee">Employee</option>
+                                <option value="teacher">Teacher</option>
+                            </select>
+                            <span class="select-arrow">▼</span>
+                        </div>
+                    </div>
+
+                    <!-- Search Button -->
+                    <button type="submit" class="search-btn">Start Learning</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Simple Text Info Section (No links, just text) -->
+        <section class="info-text-section">
+            <div class="info-text-item">
+                <p class="info-text">Over 10 languages available</p>
+            </div>
+            <div class="info-text-item">
+                <p class="info-text">Study Stand-alone</p>
+            </div>
+            <div class="info-text-item">
+                <p class="info-text">Have a question? Ask Shift</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

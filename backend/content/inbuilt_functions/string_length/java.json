@@ -1,0 +1,57 @@
+{
+  "language": "java",
+  "category": "string",
+  "function_id": "string_length",
+  "name": "String length",
+  "title": "String length in Java",
+  "difficulty": 1,
+  "description": "Returns the number of characters in a string using the length() method.",
+  "syntax": {
+    "signature": "int length = str.length();",
+    "parameters": "str: a non-null String whose length you want to know.",
+    "returns": "int: number of characters in the string."
+  },
+  "usage_snippet": "String name = \"Alice\";\nint length = name.length();\nSystem.out.println(length); // 5",
+  "code_examples": [
+    {
+      "title": "Basic length usage",
+      "code": "String message = \"Hello World\";\nint len = message.length();\nSystem.out.println(\"Message length: \" + len);",
+      "explanation": "length() returns the total number of characters, including spaces."
+    },
+    {
+      "title": "Check empty string",
+      "code": "String input = \"\";\nif (input.length() == 0) {\n    System.out.println(\"Empty string\");\n} else {\n    System.out.println(\"Not empty\");\n}",
+      "explanation": "Use length() == 0 to test for an empty string."
+    },
+    {
+      "title": "Loop over characters",
+      "code": "String text = \"Java\";\nfor (int i = 0; i < text.length(); i++) {\n    char ch = text.charAt(i);\n    System.out.println(ch);\n}",
+      "explanation": "Use length() to control a loop that visits every character."
+    }
+  ],
+  "usage_notes": [
+    "length() is a method, so you must use parentheses: str.length().",
+    "length() counts all characters, including spaces and punctuation.",
+    "For arrays, use field .length (no parentheses), not length()."
+  ],
+  "gotchas": [
+    {
+      "mistake": "Using str.length without parentheses",
+      "wrong_code": "String s = \"Hi\";\nint len = s.length; // compile error",
+      "right_code": "String s = \"Hi\";\nint len = s.length();",
+      "explanation": "For String, length is a method; you must call it with parentheses."
+    },
+    {
+      "mistake": "Calling length() on a null reference",
+      "wrong_code": "String s = null;\nint len = s.length(); // NullPointerException",
+      "right_code": "String s = null;\nif (s != null) {\n    int len = s.length();\n}",
+      "explanation": "Always ensure the string is not null before calling length()."
+    }
+  ],
+  "related_functions": [
+    "string_substring",
+    "string_split",
+    "string_lower",
+    "string_upper"
+  ]
+}

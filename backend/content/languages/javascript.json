@@ -1,0 +1,35 @@
+{
+  "language_id": "javascript",
+  "name": "JavaScript",
+  "version": "ES6+",
+  "paradigm": ["Multi-paradigm", "Object-Oriented", "Functional"],
+  "typing": {
+    "system": "Dynamic",
+    "strength": "Weak",
+    "description": "JavaScript uses dynamic, weak typing where types are determined at runtime and implicit conversions often occur."
+  },
+  "difficulty_level": 2,
+  "learning_curve": "Moderate - Easy to start, tricky details",
+  "use_cases": [
+    "Web Frontend Development",
+    "Backend (Node.js)",
+    "APIs",
+    "Full-Stack Applications"
+  ],
+  "description": "JavaScript is the primary language of the web, running in browsers and on servers through Node.js. It supports multiple paradigms including functional and object-oriented programming.",
+  "key_features": [
+    "Runs in the browser",
+    "First-class functions",
+    "Event-driven programming",
+    "Huge ecosystem (npm)"
+  ],
+  "syntax_style": {
+    "case_convention": "camelCase for variables/functions, PascalCase for classes",
+    "indentation": "2–4 spaces",
+    "statement_terminator": "semicolon ; (optional but recommended)",
+    "block_delimiters": "curly braces { }",
+    "comment_single": "//",
+    "comment_multi": "/* ... */",
+    "string_quotes": "Single ' , double \" , and template literals ` `"
+  }
+}

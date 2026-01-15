@@ -1,0 +1,57 @@
+{
+  "language": "python",
+  "category": "string",
+  "function_id": "string_length",
+  "name": "String length",
+  "title": "String length in Python",
+  "difficulty": 1,
+  "description": "Returns the number of characters in a string using the built-in len() function.",
+  "syntax": {
+    "signature": "length = len(s)",
+    "parameters": "s: a string (or other sequence) whose length you want to know.",
+    "returns": "int: number of characters in the string."
+  },
+  "usage_snippet": "name = \"Alice\"\nlength = len(name)\nprint(length)  # 5",
+  "code_examples": [
+    {
+      "title": "Basic len usage",
+      "code": "message = \"Hello World\"\nlength = len(message)\nprint(\"Message length:\", length)",
+      "explanation": "len() returns the total number of characters, including spaces."
+    },
+    {
+      "title": "Check empty string",
+      "code": "text = \"\"\nif len(text) == 0:\n    print(\"Empty string\")\nelse:\n    print(\"Not empty\")",
+      "explanation": "Use len(s) == 0 to test for an empty string."
+    },
+    {
+      "title": "Loop over characters",
+      "code": "text = \"Python\"\nfor i in range(len(text)):\n    ch = text[i]\n    print(ch)",
+      "explanation": "Use len() with range() to loop using indices."
+    }
+  ],
+  "usage_notes": [
+    "len() is a built-in function; you pass the string as an argument.",
+    "len() also works on lists, tuples, dicts, and other collections.",
+    "len(s) counts all characters in the string, including spaces."
+  ],
+  "gotchas": [
+    {
+      "mistake": "Calling s.len() instead of len(s)",
+      "wrong_code": "name = \"Alice\"\nlength = name.len()  # AttributeError",
+      "right_code": "name = \"Alice\"\nlength = len(name)",
+      "explanation": "len is a built-in function, not a string method."
+    },
+    {
+      "mistake": "Comparing len(s) to None",
+      "wrong_code": "if len(s) is None:\n    print(\"Empty\")",
+      "right_code": "if len(s) == 0:\n    print(\"Empty\")",
+      "explanation": "len(s) always returns an integer, never None."
+    }
+  ],
+  "related_functions": [
+    "string_slice",
+    "string_split",
+    "string_lower",
+    "string_upper"
+  ]
+}

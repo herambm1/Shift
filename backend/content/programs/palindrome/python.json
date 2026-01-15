@@ -1,0 +1,57 @@
+{
+  "language": "python",
+  "program_id": "palindrome",
+  "name": "Palindrome check",
+  "difficulty": 2,
+  "category": "string",
+  "description": "Check whether a given string is a palindrome (reads the same forwards and backwards).",
+  "input_output": {
+    "input_description": "A string, e.g. \"racecar\" or \"Level\".",
+    "output_description": "True if the string is a palindrome, False otherwise.",
+    "examples": [
+      { "input": "racecar", "output": "True" },
+      { "input": "Level", "output": "True (if case is ignored)" },
+      { "input": "hello", "output": "False" }
+    ]
+  },
+  "approach": {
+    "algorithm_type": "reverse-and-compare",
+    "steps": [
+      "Convert the string to a normalized form (e.g. lowercase).",
+      "Reverse the string using slicing.",
+      "Compare the normalized string with its reversed version.",
+      "If they are equal, the string is a palindrome."
+    ]
+  },
+  "uses_functions": [
+    "string_length",
+    "string_lower"
+  ],
+  "usage_snippet": "s = \"Level\"\nnormalized = s.lower()\nreversed_s = normalized[::-1]\nis_palindrome = (normalized == reversed_s)",
+  "code": {
+    "full_code": "def is_palindrome(s: str) -> bool:\n    if s is None:\n        return False\n    normalized = s.lower()\n    reversed_s = normalized[::-1]\n    return normalized == reversed_s\n\nif __name__ == \"__main__\":\n    test = \"Level\"\n    result = is_palindrome(test)\n    print(f\"{test} -> {result}\")\n"
+  },
+  "explanation": [
+    {
+      "title": "Normalization",
+      "text": "The string is converted to lowercase to make the comparison case-insensitive."
+    },
+    {
+      "title": "Reversing with slicing",
+      "text": "The slice syntax s[::-1] returns a reversed copy of the string."
+    },
+    {
+      "title": "Comparison",
+      "text": "If the normalized string equals its reversed version, it is a palindrome."
+    }
+  ],
+  "variations": [
+    "Strip spaces and punctuation before checking.",
+    "Check palindromes in sentences by removing non-letter characters.",
+    "Return the reversed string along with the boolean result."
+  ],
+  "related_programs": [
+    "reverse_string",
+    "count_vowels"
+  ]
+}

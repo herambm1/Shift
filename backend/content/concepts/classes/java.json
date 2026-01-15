@@ -1,0 +1,88 @@
+{
+  "language": "java",
+  "concept": "classes",
+  "title": "Classes and Objects in Java",
+  "difficulty": 3,
+  "category": "oop",
+  "estimated_time": "35 minutes",
+  "syntax": {
+    "pattern": "public class ClassName {\n    // fields (attributes)\n    private dataType fieldName;\n    \n    // constructor\n    public ClassName(parameters) {\n        this.fieldName = value;\n    }\n    \n    // methods\n    public returnType methodName() {\n        // code\n    }\n}",
+    "examples": [
+      "public class Person {\n    private String name;\n    \n    public Person(String name) {\n        this.name = name;\n    }\n}",
+      "public class Dog {\n    private String name;\n    private int age;\n    \n    public Dog(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n    \n    public void bark() {\n        System.out.println(\"Woof!\");\n    }\n}"
+    ]
+  },
+  "explanation": {
+    "short": "Classes are blueprints for objects. Java is fully object-oriented - everything must be in a class.",
+    "detailed": "Java classes define object templates with fields (data) and methods (behavior). Classes use constructors to initialize objects. Fields should be private with public getter/setter methods (encapsulation). Java supports inheritance with 'extends', interfaces with 'implements', and has access modifiers (public, private, protected). One public class per file, filename must match class name."
+  },
+  "key_points": [
+    "Everything must be in a class in Java",
+    "Use 'new' keyword to create objects",
+    "Constructor name must match class name",
+    "Fields should be private (encapsulation)",
+    "Use getters and setters for field access",
+    "Supports single inheritance with extends",
+    "Filename must match public class name",
+    "Use 'this' to refer to current object"
+  ],
+  "code_example": "// Basic class definition\npublic class Person {\n    // Private fields\n    private String name;\n    private int age;\n    \n    // Constructor\n    public Person(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n    \n    // Getter methods\n    public String getName() {\n        return name;\n    }\n    \n    public int getAge() {\n        return age;\n    }\n    \n    // Setter methods\n    public void setName(String name) {\n        this.name = name;\n    }\n    \n    public void setAge(int age) {\n        if (age > 0) {\n            this.age = age;\n        }\n    }\n    \n    // Method\n    public void introduce() {\n        System.out.println(\"Hi, I'm \" + name + \" and I'm \" + age);\n    }\n    \n    public boolean isAdult() {\n        return age >= 18;\n    }\n}\n\n// Creating and using objects\nPerson person1 = new Person(\"Alice\", 25);\nPerson person2 = new Person(\"Bob\", 17);\n\nperson1.introduce();  // Hi, I'm Alice and I'm 25\nSystem.out.println(person1.isAdult());  // true\nSystem.out.println(person2.isAdult());  // false\n\n// Inheritance\npublic class Student extends Person {\n    private String studentId;\n    private double gpa;\n    \n    public Student(String name, int age, String studentId) {\n        super(name, age);  // Call parent constructor\n        this.studentId = studentId;\n    }\n    \n    public void study() {\n        System.out.println(getName() + \" is studying\");\n    }\n    \n    @Override\n    public void introduce() {\n        super.introduce();\n        System.out.println(\"Student ID: \" + studentId);\n    }\n}\n\n// Static fields and methods\npublic class MathUtils {\n    public static final double PI = 3.14159;\n    \n    public static int add(int a, int b) {\n        return a + b;\n    }\n}\n\n// Usage of static members\nSystem.out.println(MathUtils.PI);\nint sum = MathUtils.add(5, 3);",
+  "key_concepts": [
+    {
+      "concept": "Constructor",
+      "syntax": "public ClassName(parameters) { }",
+      "purpose": "Initialize object when created"
+    },
+    {
+      "concept": "Getters/Setters",
+      "syntax": "public Type getField() { return field; }\npublic void setField(Type field) { this.field = field; }",
+      "purpose": "Access and modify private fields"
+    },
+    {
+      "concept": "Inheritance",
+      "syntax": "public class Child extends Parent { }",
+      "purpose": "Inherit fields and methods from parent class"
+    },
+    {
+      "concept": "Static members",
+      "syntax": "public static Type field;\npublic static Type method() { }",
+      "purpose": "Belong to class, not instances"
+    },
+    {
+      "concept": "Access modifiers",
+      "syntax": "public, private, protected, default",
+      "purpose": "Control visibility of fields and methods"
+    }
+  ],
+  "best_practices": [
+    "Use PascalCase for class names: MyClass",
+    "One public class per file",
+    "Filename must match public class name",
+    "Make fields private, methods public",
+    "Provide getters/setters for field access",
+    "Use constructor for initialization",
+    "Override toString() for meaningful output",
+    "Use @Override annotation when overriding methods",
+    "Follow Single Responsibility Principle"
+  ],
+  "common_mistakes": [
+    {
+      "mistake": "Making fields public",
+      "wrong": "public class Person {\n    public String name;\n}",
+      "right": "public class Person {\n    private String name;\n    public String getName() { return name; }\n}",
+      "explanation": "Fields should be private for encapsulation"
+    },
+    {
+      "mistake": "Constructor with wrong name",
+      "wrong": "public class Person {\n    public person() { }\n}",
+      "right": "public class Person {\n    public Person() { }\n}",
+      "explanation": "Constructor name must exactly match class name"
+    },
+    {
+      "mistake": "Not calling super in subclass constructor",
+      "wrong": "class Student extends Person {\n    public Student(String name) {\n        // Missing super(name)\n    }\n}",
+      "right": "class Student extends Person {\n    public Student(String name) {\n        super(name);\n    }\n}",
+      "explanation": "Must call parent constructor in subclass"
+    }
+  ]
+}

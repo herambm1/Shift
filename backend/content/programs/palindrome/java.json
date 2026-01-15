@@ -1,0 +1,58 @@
+{
+  "language": "java",
+  "program_id": "palindrome",
+  "name": "Palindrome check",
+  "difficulty": 2,
+  "category": "string",
+  "description": "Check whether a given string is a palindrome (reads the same forwards and backwards).",
+  "input_output": {
+    "input_description": "A string, e.g. \"racecar\" or \"Level\".",
+    "output_description": "true if the string is a palindrome, false otherwise.",
+    "examples": [
+      { "input": "racecar", "output": "true" },
+      { "input": "Level", "output": "true (if case is ignored)" },
+      { "input": "hello", "output": "false" }
+    ]
+  },
+  "approach": {
+    "algorithm_type": "two-pointer",
+    "steps": [
+      "Convert the string to a normalized form (e.g. lowercase).",
+      "Use two indexes: one starting at the beginning, one at the end.",
+      "Move both indexes towards the center, comparing characters.",
+      "If any pair does not match, the string is not a palindrome.",
+      "If all pairs match, the string is a palindrome."
+    ]
+  },
+  "uses_functions": [
+    "string_length",
+    "string_lower"
+  ],
+  "usage_snippet": "String s = \"Level\";\nString normalized = s.toLowerCase();\nint i = 0;\nint j = normalized.length() - 1;\nboolean isPalindrome = true;\n\nwhile (i < j) {\n    if (normalized.charAt(i) != normalized.charAt(j)) {\n        isPalindrome = false;\n        break;\n    }\n    i++;\n    j--;\n}",
+  "code": {
+    "full_code": "public class PalindromeChecker {\n    public static boolean isPalindrome(String s) {\n        if (s == null) {\n            return false;\n        }\n        String normalized = s.toLowerCase();\n        int i = 0;\n        int j = normalized.length() - 1;\n\n        while (i < j) {\n            if (normalized.charAt(i) != normalized.charAt(j)) {\n                return false;\n            }\n            i++;\n            j--;\n        }\n        return true;\n    }\n\n    public static void main(String[] args) {\n        String input = \"Level\";\n        boolean result = isPalindrome(input);\n        System.out.println(input + \" -> \" + result);\n    }\n}\n"
+  },
+  "explanation": [
+    {
+      "title": "Normalization",
+      "text": "The string is converted to lowercase so that 'L' and 'l' are treated as equal."
+    },
+    {
+      "title": "Two-pointer technique",
+      "text": "We compare characters from the start and end moving towards the center. If all pairs match, the string is a palindrome."
+    },
+    {
+      "title": "Complexity",
+      "text": "The algorithm runs in O(n) time where n is the length of the string."
+    }
+  ],
+  "variations": [
+    "Ignore spaces and punctuation before checking.",
+    "Consider only alphanumeric characters.",
+    "Make the function return the first mismatching index for debugging."
+  ],
+  "related_programs": [
+    "reverse_string",
+    "count_vowels"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "language": "python",
+  "concept": "conditionals",
+  "title": "Conditionals in Python",
+  "difficulty": 1,
+  "category": "control_flow",
+  "estimated_time": "15 minutes",
+  
+  "syntax": {
+    "pattern": "if condition:\n    # code\nelif condition:\n    # code\nelse:\n    # code",
+    "examples": [
+      "if age >= 18:\n    print('Adult')",
+      "if score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelse:\n    grade = 'C'",
+      "result = 'Pass' if score >= 50 else 'Fail'"
+    ]
+  },
+  
+  "explanation": {
+    "short": "Conditionals use if, elif, and else to execute code based on conditions.",
+    "detailed": "Python conditionals evaluate expressions and execute code blocks based on whether conditions are True or False. Uses if for first condition, elif for additional conditions, and else for default case. Supports ternary operator for simple conditions. No switch/case statement (use match in Python 3.10+)."
+  },
+  
+  "key_points": [
+    "Use 'if' for primary condition",
+    "Use 'elif' for additional conditions (not 'else if')",
+    "Use 'else' for default case",
+    "No parentheses needed around condition",
+    "Indentation defines code blocks",
+    "Ternary operator: value_if_true if condition else value_if_false"
+  ],
+  
+  "code_example": "# Basic if\nage = 20\nif age >= 18:\n    print('Adult')\n\n# if-elif-else\nscore = 85\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'F'\nprint(f'Grade: {grade}')\n\n# Ternary operator\nstatus = 'Pass' if score >= 50 else 'Fail'\n\n# Nested conditions\nif age >= 18:\n    if has_license:\n        print('Can drive')\n    else:\n        print('Need license')\nelse:\n    print('Too young')\n\n# Multiple conditions\nif age >= 18 and has_id:\n    print('Can enter')\n\nif is_weekend or is_holiday:\n    print('Day off')\n\n# Match statement (Python 3.10+)\ncommand = 'start'\nmatch command:\n    case 'start':\n        print('Starting...')\n    case 'stop':\n        print('Stopping...')\n    case _:\n        print('Unknown command')",
+  
+  "comparison_operators": [
+    {"operator": "==", "meaning": "Equal to", "example": "a == b"},
+    {"operator": "!=", "meaning": "Not equal to", "example": "a != b"},
+    {"operator": ">", "meaning": "Greater than", "example": "a > b"},
+    {"operator": "<", "meaning": "Less than", "example": "a < b"},
+    {"operator": ">=", "meaning": "Greater than or equal", "example": "a >= b"},
+    {"operator": "<=", "meaning": "Less than or equal", "example": "a <= b"},
+    {"operator": "in", "meaning": "Membership test", "example": "'a' in 'apple'"},
+    {"operator": "is", "meaning": "Identity test", "example": "a is None"}
+  ],
+  
+  "logical_operators": [
+    {"operator": "and", "meaning": "Both conditions true", "example": "age >= 18 and has_id"},
+    {"operator": "or", "meaning": "At least one true", "example": "is_admin or is_owner"},
+    {"operator": "not", "meaning": "Negate condition", "example": "not is_blocked"}
+  ],
+  
+  "best_practices": [
+    "Keep conditions simple and readable",
+    "Use parentheses for complex conditions",
+    "Avoid deep nesting (max 2-3 levels)",
+    "Use 'is' for None checks: if value is None",
+    "Use 'in' for membership: if item in list",
+    "Prefer guard clauses over deep nesting"
+  ],
+  
+  "common_mistakes": [
+    {
+      "mistake": "Using = instead of ==",
+      "wrong": "if age = 18:  # Assignment, not comparison",
+      "right": "if age == 18:",
+      "explanation": "Use == for comparison, = for assignment"
+    },
+    {
+      "mistake": "Forgetting colon",
+      "wrong": "if age >= 18\n    print('Adult')",
+      "right": "if age >= 18:\n    print('Adult')",
+      "explanation": "Conditional statements must end with colon"
+    },
+    {
+      "mistake": "Writing 'else if' instead of 'elif'",
+      "wrong": "if x > 10:\n    pass\nelse if x > 5:\n    pass",
+      "right": "if x > 10:\n    pass\nelif x > 5:\n    pass",
+      "explanation": "Python uses 'elif', not 'else if'"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "language": "python",
+  "concept": "classes",
+  "title": "Classes and Objects in Python",
+  "difficulty": 3,
+  "category": "oop",
+  "estimated_time": "30 minutes",
+  
+  "syntax": {
+    "pattern": "class ClassName:\n    def __init__(self, parameters):\n        self.attribute = value\n    \n    def method(self):\n        # code",
+    "examples": [
+      "class Person:\n    def __init__(self, name):\n        self.name = name",
+      "class Dog:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n    \n    def bark(self):\n        return 'Woof!'"
+    ]
+  },
+  
+  "explanation": {
+    "short": "Classes are blueprints for creating objects. Use 'class' keyword and '__init__' method for initialization.",
+    "detailed": "Python classes define object blueprints with attributes (data) and methods (functions). The __init__ method is the constructor, called when creating objects. 'self' refers to the instance. Python supports inheritance, encapsulation, and polymorphism. All methods take 'self' as first parameter."
+  },
+  
+  "key_points": [
+    "Use 'class' keyword to define classes",
+    "__init__ is the constructor method",
+    "Use 'self' to refer to instance",
+    "Methods must have 'self' as first parameter",
+    "Use ClassName() to create instances",
+    "Supports inheritance and multiple inheritance",
+    "Private attributes use underscore: _private or __private"
+  ],
+  
+  "code_example": "# Basic class\nclass Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n    \n    def greet(self):\n        return f'Hi, I am {self.name}'\n    \n    def is_adult(self):\n        return self.age >= 18\n\n# Creating objects\nperson1 = Person('Alice', 25)\nperson2 = Person('Bob', 17)\n\nprint(person1.greet())  # Hi, I am Alice\nprint(person1.is_adult())  # True\nprint(person2.is_adult())  # False\n\n# Inheritance\nclass Student(Person):\n    def __init__(self, name, age, grade):\n        super().__init__(name, age)\n        self.grade = grade\n    \n    def study(self):\n        return f'{self.name} is studying'\n\nstudent = Student('Charlie', 20, 'A')\nprint(student.greet())  # Inherited from Person\nprint(student.study())  # Student's own method\n\n# Class attributes (shared by all instances)\nclass Dog:\n    species = 'Canis familiaris'  # Class attribute\n    \n    def __init__(self, name, breed):\n        self.name = name  # Instance attribute\n        self.breed = breed\n\ndog1 = Dog('Buddy', 'Golden Retriever')\ndog2 = Dog('Max', 'Beagle')\nprint(Dog.species)  # Canis familiaris\nprint(dog1.species)  # Canis familiaris (same for all)",
+  
+  "key_concepts": [
+    {
+      "concept": "Constructor",
+      "syntax": "def __init__(self, params):",
+      "purpose": "Initialize object attributes"
+    },
+    {
+      "concept": "Instance method",
+      "syntax": "def method(self):",
+      "purpose": "Functions that operate on instance"
+    },
+    {
+      "concept": "Class method",
+      "syntax": "@classmethod\ndef method(cls):",
+      "purpose": "Methods that work with class itself"
+    },
+    {
+      "concept": "Static method",
+      "syntax": "@staticmethod\ndef method():",
+      "purpose": "Methods that don't use instance or class"
+    },
+    {
+      "concept": "Property",
+      "syntax": "@property\ndef attribute(self):",
+      "purpose": "Getter/setter for attributes"
+    }
+  ],
+  
+  "best_practices": [
+    "Use PascalCase for class names: MyClass not my_class",
+    "Use snake_case for method names: get_value not getValue",
+    "Keep classes focused on single responsibility",
+    "Use __init__ for initialization, not for heavy computation",
+    "Use @property for computed attributes",
+    "Document classes with docstrings",
+    "Use _underscore for 'private' attributes (convention only)"
+  ],
+  
+  "common_mistakes": [
+    {
+      "mistake": "Forgetting self parameter",
+      "wrong": "class Person:\n    def greet():\n        return 'Hello'",
+      "right": "class Person:\n    def greet(self):\n        return 'Hello'",
+      "explanation": "All instance methods must have 'self' as first parameter"
+    },
+    {
+      "mistake": "Not calling parent __init__",
+      "wrong": "class Student(Person):\n    def __init__(self, name, grade):\n        self.grade = grade",
+      "right": "class Student(Person):\n    def __init__(self, name, grade):\n        super().__init__(name)\n        self.grade = grade",
+      "explanation": "Must call parent __init__ to initialize parent attributes"
+    },
+    {
+      "mistake": "Accessing attributes without self",
+      "wrong": "class Person:\n    def __init__(self, name):\n        self.name = name\n    def greet(self):\n        return f'Hi {name}'",
+      "right": "class Person:\n    def __init__(self, name):\n        self.name = name\n    def greet(self):\n        return f'Hi {self.name}'",
+      "explanation": "Must use self.attribute to access instance attributes"
+    }
+  ]
+}

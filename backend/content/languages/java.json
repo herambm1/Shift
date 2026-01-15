@@ -1,0 +1,74 @@
+{
+  "language_id": "java",
+  "name": "Java",
+  "version": "17 LTS",
+  "paradigm": ["Object-Oriented"],
+  "typing": {
+    "system": "Static",
+    "strength": "Strong",
+    "description": "Java uses static typing - all variables must be declared with specific types that cannot change"
+  },
+  "difficulty_level": 3,
+  "learning_curve": "Moderate - Requires understanding of OOP concepts",
+  "use_cases": [
+    "Enterprise Applications",
+    "Android Mobile Development",
+    "Web Applications (Spring, Java EE)",
+    "Big Data Processing (Hadoop, Spark)",
+    "Cloud-based Applications",
+    "Desktop Applications"
+  ],
+  "description": "Java is a class-based, object-oriented programming language designed to be platform-independent through the Java Virtual Machine (JVM). Created by James Gosling at Sun Microsystems in 1995, it follows the principle of 'Write Once, Run Anywhere' and is widely used in enterprise environments.",
+  "popularity_rank": 2,
+  "key_features": [
+    "Platform independence (JVM)",
+    "Strong static typing",
+    "Automatic memory management (Garbage Collection)",
+    "Rich standard library",
+    "Multithreading support",
+    "Robust security features",
+    "Large enterprise ecosystem"
+  ],
+  "syntax_style": {
+    "case_convention": "camelCase for variables and methods, PascalCase for classes",
+    "indentation": "4 spaces or 1 tab",
+    "statement_terminator": "semicolon (;)",
+    "block_delimiters": "curly braces { }",
+    "comment_single": "//",
+    "comment_multi": "/* ... */",
+    "javadoc_comment": "/** ... */",
+    "string_quotes": "Double quotes (\" \") only"
+  },
+  "compiler_interpreter": {
+    "type": "Compiled to bytecode, then interpreted by JVM",
+    "execution": "Compile to .class files, run on JVM",
+    "performance": "High (optimized by JIT compiler)"
+  },
+  "language_requirements": {
+    "main_method": "public static void main(String[] args)",
+    "file_naming": "Filename must match public class name",
+    "class_structure": "Everything must be inside a class",
+    "imports": "Must import classes from other packages"
+  },
+  "famous_for": [
+    "Enterprise-grade applications",
+    "Android app development",
+    "Platform independence",
+    "Strong type safety",
+    "Extensive documentation and community"
+  ],
+  "advantages": [
+    "Write once, run anywhere (WORA)",
+    "Mature ecosystem with extensive libraries",
+    "Strong backward compatibility",
+    "Excellent IDE support (IntelliJ, Eclipse)",
+    "Built-in multithreading",
+    "Automatic memory management"
+  ],
+  "challenges": [
+    "Verbose syntax compared to modern languages",
+    "Slower startup time",
+    "More boilerplate code required",
+    "Memory consumption higher than native languages"
+  ]
+}

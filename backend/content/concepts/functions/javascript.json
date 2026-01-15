@@ -1,0 +1,49 @@
+{
+  "language": "javascript",
+  "concept": "functions",
+  "title": "Functions in JavaScript",
+  "difficulty": 2,
+  "category": "basics",
+  "estimated_time": "20 minutes",
+  "syntax": {
+    "pattern": "// Function declaration\nfunction name(params) {\n  // body\n}\n\n// Function expression\nconst name = function(params) {\n  // body\n};\n\n// Arrow function\nconst name = (params) => {\n  // body\n};",
+    "examples": [
+      "function add(a, b) { return a + b; }",
+      "const multiply = function(a, b) { return a * b; };",
+      "const greet = (name) => `Hello, ${name}`;"
+    ]
+  },
+  "explanation": {
+    "short": "JavaScript functions are first-class values and can be declared in several ways.",
+    "detailed": "Functions in JavaScript can be created using declarations, expressions, or arrow function syntax. They can be passed as arguments, returned from other functions, and stored in variables. Arrow functions have shorter syntax and different this behavior, which is useful in many cases."
+  },
+  "key_points": [
+    "Functions are first-class citizens (can be passed around like values).",
+    "Function declarations are hoisted (available before their definition).",
+    "Function expressions and arrow functions are not hoisted the same way.",
+    "Arrow functions do not have their own this or arguments.",
+    "Template strings (`) make string building easier."
+  ],
+  "code_example": "// Function declaration\nfunction add(a, b) {\n  return a + b;\n}\n\n// Function expression\nconst multiply = function(a, b) {\n  return a * b;\n};\n\n// Arrow function\nconst greet = (name) => {\n  return `Hello, ${name}`;\n};\n\nconsole.log(add(2, 3)); // 5\nconsole.log(multiply(4, 5)); // 20\nconsole.log(greet('Alice')); // Hello, Alice\n\n// Arrow function with implicit return\nconst square = x => x * x;\nconsole.log(square(5)); // 25",
+  "best_practices": [
+    "Use function declarations for named, reusable functions.",
+    "Use arrow functions for short callbacks and inline functions.",
+    "Give functions descriptive names.",
+    "Keep functions focused on a single responsibility.",
+    "Avoid relying on this inside arrow functions in object methods."
+  ],
+  "common_mistakes": [
+    {
+      "mistake": "Using this in arrow functions as methods",
+      "wrong": "const obj = { value: 10, getValue: () => this.value };",
+      "right": "const obj = { value: 10, getValue() { return this.value; } };",
+      "explanation": "Arrow functions don't bind their own this. Use regular methods for object behavior."
+    },
+    {
+      "mistake": "Calling function before it's defined (for expressions)",
+      "wrong": "sayHello(); const sayHello = () => console.log('Hi');",
+      "right": "const sayHello = () => console.log('Hi'); sayHello();",
+      "explanation": "Only function declarations are fully hoisted, not function expressions."
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "language": "java",
+  "concept": "conditionals",
+  "title": "Conditionals in Java",
+  "difficulty": 2,
+  "category": "control_flow",
+  "estimated_time": "20 minutes",
+  "syntax": {
+    "pattern": "if (condition) {\n    // code\n} else if (condition) {\n    // code\n} else {\n    // code\n}",
+    "examples": [
+      "if (age >= 18) {\n    System.out.println(\"Adult\");\n}",
+      "if (score >= 90) {\n    grade = \"A\";\n} else if (score >= 80) {\n    grade = \"B\";\n} else {\n    grade = \"C\";\n}",
+      "String result = (score >= 50) ? \"Pass\" : \"Fail\";"
+    ]
+  },
+  "explanation": {
+    "short": "Java conditionals use if, else if, else, and switch statements to control program flow.",
+    "detailed": "Java supports if-else statements for conditional execution, switch statements for multiple value checks, and ternary operator for simple conditions. Conditions must be boolean expressions. Braces are recommended even for single statements. Java also supports switch expressions (Java 12+)."
+  },
+  "key_points": [
+    "Conditions must be boolean expressions",
+    "Use parentheses around conditions",
+    "else if (not elif or elseif)",
+    "Braces recommended even for single statements",
+    "Supports switch statement",
+    "Ternary operator: condition ? true : false",
+    "Switch expressions available in Java 12+"
+  ],
+  "code_example": "// Basic if statement\nint age = 20;\nif (age >= 18) {\n    System.out.println(\"Adult\");\n}\n\n// if-else if-else\nint score = 85;\nString grade;\nif (score >= 90) {\n    grade = \"A\";\n} else if (score >= 80) {\n    grade = \"B\";\n} else if (score >= 70) {\n    grade = \"C\";\n} else {\n    grade = \"F\";\n}\nSystem.out.println(\"Grade: \" + grade);\n\n// Ternary operator\nString status = (score >= 50) ? \"Pass\" : \"Fail\";\n\n// Nested conditions\nif (age >= 18) {\n    if (hasLicense) {\n        System.out.println(\"Can drive\");\n    } else {\n        System.out.println(\"Need license\");\n    }\n} else {\n    System.out.println(\"Too young\");\n}\n\n// Multiple conditions\nboolean canEnter = (age >= 18 && hasID);\nboolean isDayOff = (isWeekend || isHoliday);\n\n// Switch statement\nString day = \"Monday\";\nswitch (day) {\n    case \"Monday\":\n        System.out.println(\"Start of week\");\n        break;\n    case \"Friday\":\n        System.out.println(\"End of week\");\n        break;\n    case \"Saturday\":\n    case \"Sunday\":\n        System.out.println(\"Weekend\");\n        break;\n    default:\n        System.out.println(\"Midweek\");\n}\n\n// Switch expression (Java 12+)\nString dayType = switch (day) {\n    case \"Saturday\", \"Sunday\" -> \"Weekend\";\n    case \"Monday\" -> \"Start of week\";\n    default -> \"Weekday\";\n};",
+  "comparison_operators": [
+    {"operator": "==", "meaning": "Equal to", "example": "a == b"},
+    {"operator": "!=", "meaning": "Not equal to", "example": "a != b"},
+    {"operator": ">", "meaning": "Greater than", "example": "a > b"},
+    {"operator": "<", "meaning": "Less than", "example": "a < b"},
+    {"operator": ">=", "meaning": "Greater than or equal", "example": "a >= b"},
+    {"operator": "<=", "meaning": "Less than or equal", "example": "a <= b"}
+  ],
+  "logical_operators": [
+    {"operator": "&&", "meaning": "Logical AND", "example": "age >= 18 && hasID"},
+    {"operator": "||", "meaning": "Logical OR", "example": "isAdmin || isOwner"},
+    {"operator": "!", "meaning": "Logical NOT", "example": "!isBlocked"}
+  ],
+  "best_practices": [
+    "Always use braces, even for single statements",
+    "Use parentheses to clarify complex conditions",
+    "Avoid deep nesting (prefer early returns)",
+    "Use switch for multiple value checks on same variable",
+    "Use equals() for String comparison, not ==",
+    "Remember to break in switch statements",
+    "Consider switch expressions for cleaner code (Java 12+)"
+  ],
+  "common_mistakes": [
+    {
+      "mistake": "Using = instead of ==",
+      "wrong": "if (age = 18) { }",
+      "right": "if (age == 18) { }",
+      "explanation": "= is assignment, == is comparison"
+    },
+    {
+      "mistake": "Comparing Strings with ==",
+      "wrong": "if (name == \"Alice\") { }",
+      "right": "if (name.equals(\"Alice\")) { }",
+      "explanation": "Use equals() method for String comparison"
+    },
+    {
+      "mistake": "Forgetting break in switch",
+      "wrong": "switch(x) {\n    case 1:\n        System.out.println(\"One\");\n    case 2:\n        System.out.println(\"Two\");\n}",
+      "right": "switch(x) {\n    case 1:\n        System.out.println(\"One\");\n        break;\n    case 2:\n        System.out.println(\"Two\");\n        break;\n}",
+      "explanation": "Missing break causes fall-through to next case"
+    }
+  ]
+}

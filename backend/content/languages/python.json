@@ -1,0 +1,50 @@
+{
+  "language_id": "python",
+  "name": "Python",
+  "version": "3.11+",
+  "paradigm": ["Object-Oriented", "Functional", "Procedural"],
+  "typing": {
+    "system": "Dynamic",
+    "strength": "Strong",
+    "description": "Python uses dynamic typing - variables can change type at runtime"
+  },
+  "difficulty_level": 2,
+  "learning_curve": "Gentle - Beginner friendly",
+  "use_cases": [
+    "Web Development (Django, Flask)",
+    "Data Science & ML (NumPy, Pandas, TensorFlow)",
+    "Automation & Scripting",
+    "Scientific Computing",
+    "Backend Development"
+  ],
+  "description": "Python is a high-level, interpreted programming language known for its simple, readable syntax and powerful standard library. Created by Guido van Rossum in 1991, it emphasizes code readability and allows developers to express concepts in fewer lines of code.",
+  "popularity_rank": 1,
+  "key_features": [
+    "Clean, readable syntax",
+    "Extensive standard library",
+    "Dynamic typing",
+    "Automatic memory management",
+    "Cross-platform compatibility",
+    "Large ecosystem of packages (PyPI)"
+  ],
+  "syntax_style": {
+    "case_convention": "snake_case",
+    "indentation": "4 spaces (mandatory for code blocks)",
+    "statement_terminator": "none",
+    "block_delimiters": "indentation-based",
+    "comment_single": "#",
+    "comment_multi": "\"\"\" ... \"\"\" or ''' ... '''",
+    "string_quotes": "Single ' or double \" (interchangeable)"
+  },
+  "compiler_interpreter": {
+    "type": "Interpreted",
+    "execution": "Line-by-line at runtime",
+    "performance": "Moderate (slower than compiled languages)"
+  },
+  "famous_for": [
+    "Readable code (almost like pseudocode)",
+    "Rapid development",
+    "Extensive libraries for data science",
+    "Beginner-friendly learning curve"
+  ]
+}

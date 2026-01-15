@@ -1,0 +1,49 @@
+{
+  "language": "javascript",
+  "concept": "variables",
+  "title": "Variables in JavaScript",
+  "difficulty": 1,
+  "category": "basics",
+  "estimated_time": "15 minutes",
+  "syntax": {
+    "pattern": "let variableName = value;\nconst CONSTANT_NAME = value;\nvar oldStyle = value;",
+    "examples": [
+      "let age = 25;",
+      "const NAME = 'Alice';",
+      "var isStudent = true;"
+    ]
+  },
+  "explanation": {
+    "short": "JavaScript has three main ways to declare variables: var, let, and const.",
+    "detailed": "Modern JavaScript uses let and const for most variables. let is used for values that can change, const for values that should not be reassigned. var is the old way and has function scope and hoisting behavior that often leads to bugs, so it is generally avoided now."
+  },
+  "key_points": [
+    { "type": "string", "example": "let name = 'Alice';", "description": "Text values" },
+    { "type": "number", "example": "let age = 25;", "description": "Numeric values" },
+    { "type": "boolean", "example": "let isStudent = true;", "description": "True/false values" },
+    { "type": "array", "example": "let items = [1, 2, 3];", "description": "Ordered list of values" },
+    { "type": "null", "example": "let data = null;", "description": "Intentional empty value" },
+    { "type": "undefined", "example": "let x; // undefined", "description": "Declared but not assigned" }
+  ],
+  "best_practices": [
+    "Prefer const by default, use let only when reassigning.",
+    "Avoid var in new code.",
+    "Use descriptive variable names.",
+    "Keep variables as local as possible (limit scope).",
+    "Initialize variables when declaring them."
+  ],
+  "common_mistakes": [
+    {
+      "mistake": "Using var and expecting block scope",
+      "wrong": "if (true) { var x = 10; } console.log(x); // 10",
+      "right": "if (true) { let x = 10; } console.log(x); // ReferenceError",
+      "explanation": "var is function-scoped, not block-scoped, which can leak variables."
+    },
+    {
+      "mistake": "Reassigning const",
+      "wrong": "const name = 'Alice'; name = 'Bob';",
+      "right": "let name = 'Alice'; name = 'Bob';",
+      "explanation": "const cannot be reassigned. Use let if the value will change."
+    }
+  ]
+}

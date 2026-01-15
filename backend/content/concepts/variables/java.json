@@ -1,0 +1,68 @@
+{
+  "language": "java",
+  "concept": "variables",
+  "title": "Variables in Java",
+  "difficulty": 2,
+  "category": "basics",
+  "estimated_time": "20 minutes",
+  "syntax": {
+    "pattern": "dataType variableName = value;",
+    "examples": [
+      "int age = 25;",
+      "String name = \"Alice\";",
+      "boolean isStudent = true;",
+      "double price = 19.99;"
+    ]
+  },
+  "explanation": {
+    "short": "Java variables must be declared with a specific data type before use.",
+    "detailed": "Java uses static typing, meaning you must declare the type of each variable. Once declared, a variable cannot change its type. Variables must be initialized before use. Java distinguishes between primitive types (int, double, boolean) and reference types (String, objects)."
+  },
+  "key_points": [
+    "Type declaration is mandatory",
+    "Type cannot change after declaration",
+    "Use camelCase naming convention",
+    "Semicolons required at end of statements",
+    "Primitive vs Reference types",
+    "Must initialize before use"
+  ],
+  "code_example": "// Variable declaration and initialization\nint age = 25;\nString name = \"Alice\";\nboolean isStudent = true;\ndouble price = 19.99;\n\n// Declaration without initialization\nint count;\ncount = 10;\n\n// Multiple variables of same type\nint x = 1, y = 2, z = 3;\n\n// Constants (final keyword)\nfinal double PI = 3.14159;\nfinal int MAX_SIZE = 100;\n\nSystem.out.println(name + \" is \" + age + \" years old\");",
+  "common_types": [
+    {"type": "int", "example": "int count = 10;", "description": "32-bit integer"},
+    {"type": "double", "example": "double price = 19.99;", "description": "64-bit floating point"},
+    {"type": "float", "example": "float rate = 5.5f;", "description": "32-bit floating point"},
+    {"type": "boolean", "example": "boolean isValid = true;", "description": "true or false"},
+    {"type": "char", "example": "char grade = 'A';", "description": "Single character"},
+    {"type": "String", "example": "String name = \"John\";", "description": "Text (reference type)"},
+    {"type": "long", "example": "long population = 7000000000L;", "description": "64-bit integer"},
+    {"type": "byte", "example": "byte age = 25;", "description": "8-bit integer"}
+  ],
+  "best_practices": [
+    "Use descriptive names: userAge not ua",
+    "Follow camelCase: userName not user_name",
+    "Use UPPER_CASE for constants: MAX_VALUE",
+    "Initialize variables when declared",
+    "Use primitive types for performance when possible",
+    "Use final for constants"
+  ],
+  "common_mistakes": [
+    {
+      "mistake": "Not initializing variables",
+      "wrong": "int count;\nSystem.out.println(count);",
+      "right": "int count = 0;\nSystem.out.println(count);",
+      "explanation": "Variables must be initialized before use in Java"
+    },
+    {
+      "mistake": "Trying to change type",
+      "wrong": "int age = 25;\nage = \"twenty-five\";",
+      "right": "int age = 25;\nString ageStr = \"twenty-five\";",
+      "explanation": "Cannot change variable type after declaration"
+    },
+    {
+      "mistake": "Forgetting semicolon",
+      "wrong": "int age = 25",
+      "right": "int age = 25;",
+      "explanation": "All statements in Java must end with semicolon"
+    }
+  ]
+}

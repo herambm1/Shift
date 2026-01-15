@@ -1,0 +1,59 @@
+{
+  "language": "python",
+  "concept": "variables",
+  "title": "Variables in Python",
+  "difficulty": 1,
+  "category": "basics",
+  "estimated_time": "15 minutes",
+  "syntax": {
+    "pattern": "variable_name = value",
+    "examples": [
+      "age = 25",
+      "name = 'Alice'",
+      "is_student = True",
+      "price = 19.99"
+    ]
+  },
+  "explanation": {
+    "short": "Python variables are created by assignment without type declaration.",
+    "detailed": "Variables in Python are references to objects. You create them by assigning a value to a name. Python automatically determines the type based on the value. Variables can be reassigned to different types at any time."
+  },
+  "key_points": [
+    "No type declaration required",
+    "Type is inferred from value",
+    "Variables can change type",
+    "Use snake_case naming",
+    "No semicolons needed",
+    "Case-sensitive (age ≠ Age)"
+  ],
+  "code_example": "# Variable declaration\nage = 25\nname = 'Alice'\nis_student = True\nprice = 19.99\n\n# Multiple assignment\nx, y, z = 1, 2, 3\n\n# Swap values\na, b = 10, 20\na, b = b, a\n\nprint(f'{name} is {age} years old')",
+  "common_types": [
+    {"type": "int", "example": "count = 10"},
+    {"type": "float", "example": "price = 19.99"},
+    {"type": "str", "example": "name = 'John'"},
+    {"type": "bool", "example": "is_valid = True"},
+    {"type": "list", "example": "numbers = [1, 2, 3]"},
+    {"type": "dict", "example": "person = {'name': 'John', 'age': 30}"}
+  ],
+  "best_practices": [
+    "Use descriptive names: user_age not ua",
+    "Follow snake_case: user_name not userName",
+    "Use UPPER_CASE for constants: MAX_SIZE = 100",
+    "Initialize before use",
+    "Add type hints for clarity: age: int = 25"
+  ],
+  "common_mistakes": [
+    {
+      "mistake": "Using reserved keywords",
+      "wrong": "class = 'Math'",
+      "right": "class_name = 'Math'",
+      "explanation": "Keywords like class, for, if are reserved"
+    },
+    {
+      "mistake": "Starting with numbers",
+      "wrong": "1st_place = 'Gold'",
+      "right": "first_place = 'Gold'",
+      "explanation": "Variable names must start with letter or underscore"
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shift - Learning Comparison</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/comparison.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="Shift Logo" class="logo-img">
+                </a>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">← Back to Home</a>
+                <button class="icon-btn" id="languageBtn">🌐</button>
+                <button class="icon-btn" id="favoritesBtn">❤️</button>
+                <button class="login-btn" id="loginBtn">
+                    <span class="user-icon">👤</span> Log in
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Comparison Layout -->
+    <div class="comparison-container">
+        <!-- Left Sidebar: Progress Tracker -->
+<!-- Left Sidebar: Learning Paths -->
+<!-- Left Sidebar: Learning Paths -->
+<aside class="progress-sidebar">
+    <!-- Current Mode Indicator -->
+    <div class="current-mode">
+        <h2 id="currentModeTitle">Core Concepts</h2>
+    </div>
+
+    <!-- Core Concepts (existing) -->
+    <div class="path-section active" data-mode="concept">
+        <h3>Core Concepts</h3>
+        <div class="progress-list" id="progressList">
+            <div class="progress-item" data-mode="concept" data-item="variables">
+                <span class="progress-icon">►</span>
+                <span class="progress-title">Variables</span>
+            </div>
+            <div class="progress-item" data-mode="concept" data-item="functions">
+                <span class="progress-icon">□</span>
+                <span class="progress-title">Functions</span>
+            </div>
+            <div class="progress-item" data-mode="concept" data-item="loops">
+                <span class="progress-icon">□</span>
+                <span class="progress-title">Loops</span>
+            </div>
+            <div class="progress-item" data-mode="concept" data-item="conditionals">
+                <span class="progress-icon">□</span>
+                <span class="progress-title">Conditionals</span>
+            </div>
+            <div class="progress-item" data-mode="concept" data-item="classes">
+                <span class="progress-icon">□</span>
+                <span class="progress-title">Classes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inbuilt Functions (NEW - Custom Dropdown) -->
+    <div class="path-section" data-mode="function">
+        <h3>Inbuilt Functions</h3>
+        <div class="function-dropdown">
+            <div class="dropdown-trigger">
+                <span class="dropdown-category">String</span>
+                <span class="dropdown-arrow">▼</span>
+            </div>
+            <div class="dropdown-menu">
+                <!-- Math -->
+                <div class="menu-group">
+                    <span class="group-title">Math</span>
+                    <div class="menu-item" data-item="math_abs">abs</div>
+                    <div class="menu-item" data-item="math_max">max</div>
+                    <div class="menu-item" data-item="math_min">min</div>
+                    <div class="menu-item" data-item="math_pow">pow</div>
+                </div>
+                <!-- Array -->
+                <div class="menu-group">
+                    <span class="group-title">Array</span>
+                    <div class="menu-item" data-item="array_length">length</div>
+                    <div class="menu-item" data-item="array_sort">sort</div>
+                    <div class="menu-item" data-item="array_sum">sum</div>
+                </div>
+                <!-- String -->
+                <div class="menu-group">
+                    <span class="group-title">String</span>
+                    <div class="menu-item active" data-item="string_length">length</div>
+                    <div class="menu-item" data-item="string_lower">lower</div>
+                    <div class="menu-item" data-item="string_upper">upper</div>
+                    <div class="menu-item" data-item="string_split">split</div>
+                </div>
+                <!-- Mix -->
+                <div class="menu-group">
+                    <span class="group-title">Mix</span>
+                    <div class="menu-item" data-item="mix_parse_int">parseInt</div>
+                    <div class="menu-item" data-item="mix_to_string">toString</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Intro Programs (NEW) -->
+    <div class="path-section" data-mode="program">
+        <h3>Intro Programs</h3>
+        <div class="progress-list" id="programsList">
+            <div class="progress-item" data-mode="program" data-item="palindrome">
+                <span class="progress-icon">★</span>
+                <span class="progress-title">Palindrome</span>
+            </div>
+            <div class="progress-item" data-mode="program" data-item="count_vowels">
+                <span class="progress-icon">□</span>
+                <span class="progress-title">Count Vowels</span>
+            </div>
+            <div class="progress-item" data-mode="program" data-item="reverse_string">
+                <span class="progress-icon">□</span>
+                <span class="progress-title">Reverse String</span>
+            </div>
+            <div class="progress-item" data-mode="program" data-item="sum_array">
+                <span class="progress-icon">□</span>
+                <span class="progress-title">Sum Array</span>
+            </div>
+            <div class="progress-item" data-mode="program" data-item="word_count">
+                <span class="progress-icon">□</span>
+                <span class="progress-title">Word Count</span>
+            </div>
+        </div>
+    </div>
+
+    <button class="next-topic-btn" id="nextTopicBtn">Next →</button>
+</aside>
+
+
+        <!-- Main Content: Split Comparison -->
+        <main class="comparison-main">
+            <!-- Language Headers -->
+            <div class="language-headers">
+                <div class="language-header source-lang">
+                    <h3 id="sourceLangName">Java</h3>
+                    <span class="lang-label">(Source Language)</span>
+                </div>
+
+                <div class="comparison-divider"></div>
+
+                <div class="language-header target-lang">
+                    <h3 id="targetLangName">Python</h3>
+                    <span class="lang-label">(Target Language)</span>
+                </div>
+            </div>
+
+            <!-- Concept Title -->
+            <div class="concept-title">
+                <h1 id="conceptTitle">Variables</h1>
+            </div>
+
+            <!-- Split Comparison Content -->
+            <div class="split-content">
+                <!-- Left Side: Source Language -->
+                <div class="content-panel source-panel">
+                    <div class="syntax-section">
+                        <h4>Syntax</h4>
+                        <code id="sourceSyntax">Loading...</code>
+                    </div>
+
+                    <div class="code-section">
+                        <h4>Example</h4>
+                        <pre id="sourceCode">Loading...</pre>
+                    </div>
+
+                    <div class="explanation-section">
+                        <h4>Key Points</h4>
+                        <ul id="sourceKeyPoints">
+                            <li>Loading...</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="center-divider"></div>
+
+                <!-- Right Side: Target Language -->
+                <div class="content-panel target-panel">
+                    <div class="syntax-section">
+                        <h4>Syntax</h4>
+                        <code id="targetSyntax">Loading...</code>
+                    </div>
+
+                    <div class="code-section">
+                        <h4>Example</h4>
+                        <pre id="targetCode">Loading...</pre>
+                    </div>
+
+                    <div class="explanation-section">
+                        <h4>Key Points</h4>
+                        <ul id="targetKeyPoints">
+                            <li>Loading...</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/comparison.js"></script>
+</body>
+</html>
